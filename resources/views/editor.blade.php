@@ -243,8 +243,7 @@
       emmetMonaco.emmetCSS(monaco)
       var editorHTML = monaco.editor.create(document.getElementById('html'), {
         value: `{!! $user->htmlCode ??
-            '<div class="csswar_root">
-                                    <!-- Write code here --></div>' !!}`,
+            '<div class="csswar_root">\n\t<!-- Write code here -->\n</div>' !!}`,
         language: 'html',
         theme: "vs-dark",
         // formatOnType: true

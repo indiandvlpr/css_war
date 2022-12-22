@@ -36,12 +36,6 @@
 
   <div class="container d-flex justify-content-center align-items-center" style="padding-top: 30px;min-height:500px">
 
-
-
-
-
-
-
     <form style="background: white;" class="shadow custom_form form_border" method="POST"
       action="{{ route('register_user') }}" style="height: max-content;width:420px">
       @csrf
