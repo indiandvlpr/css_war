@@ -35,6 +35,16 @@
         </a>
       </div>
 
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul style="margin:0">
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+
       <div class="heading mb-4">Login</div>
 
       <div class="my-2">
