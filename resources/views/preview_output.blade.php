@@ -1,5 +1,5 @@
 @php
-  $users = \App\Models\User::all();
+  $users = \App\Models\User::inRandomOrder()->get();
   
   $userCount = \App\Models\User::count();
 @endphp
@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
   <script>
     function updateOutput(id, html, css) {
       var code = document.getElementById(id).contentWindow.document;
@@ -77,6 +78,8 @@ ${css}
   </script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -94,6 +97,7 @@ ${css}
       overflow-x: hidden;
       display: grid;
       place-items: center;
+      background-color: rgb(114, 70, 236);
     }
 
     .container {
@@ -119,24 +123,29 @@ ${css}
     }
 
     .box .overlap {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        position: absolute;
-        color: white;
-        background-color: rgba(11, 17, 37, 0.664);
-        display: flex;
-    }
-    .box .overlap {
-
-    }
-
-    .box:hover {
-      transform: scale(1.05);
-      transition: .5s linear;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      color: white;
+      background-color: rgba(4, 17, 63, 0.596);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
 
-    .box iframe {
+    .box .overlap h2 {
+      /* text-transform: lowercase; */
+      font-weight: normal;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+
+    .box iframe,
+    iframe {
       width: 100%;
       height: 100%;
     }
@@ -147,7 +156,7 @@ ${css}
 
   <div class="container">
     @foreach ($users as $user)
-      <div class="box">
+      <div class="box" id="{{ 'frame_box_' . $user->phone }}" onclick="openInModel(this)">
         <iframe id="{{ 'frame_' . $user->phone }}" frameborder="0"></iframe>
 
         @php
@@ -156,7 +165,8 @@ ${css}
         @endphp
 
         <div class="overlap">
-          <h1>{{ $user->first_name . ' ' . $user->last_name }}</h1>
+          <h2>{{ $user->first_name . ' ' . $user->last_name }}</h2>
+          <p>{{ $user->course }}</p>
         </div>
 
         <script>
@@ -169,7 +179,35 @@ ${css}
 
 
 
+  <div id="close_current" style="color:white;cursor: pointer;background:rgb(248, 88, 88);width:40px;border-radius:5px;text-align:center;position: fixed;font-size:30px;top:5px;right:5px;display:none">X</div>
 
+  <script>
+
+
+
+    function openInModel(elm) {
+      elm.style.position = "fixed";
+      elm.style.zIndex = "999999";
+      elm.style.width = "calc(100vw - 50px)";
+      elm.style.height = "calc(100vh - 50px)";
+      elm.style.top = "25px";
+      elm.children[1].style.display = "none";
+      document.querySelector("#close_current").style.display = "unset";
+      document.querySelector("#close_current").style.zIndex = "9999999999";
+
+
+      document.querySelector("#close_current").addEventListener("click", () => {
+        elm.style.position = "relative";
+        elm.style.zIndex = "unset";
+        elm.style.width = "500px";
+        elm.style.height = "300px";
+        elm.style.top = "unset";
+        elm.children[1].style.display = "flex";
+        document.querySelector("#close_current").style.display = "none";
+
+      })
+    }
+  </script>
 
 </body>
 

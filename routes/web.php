@@ -15,15 +15,15 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', fn() => view('welcome'));
-Route::get('/register', function () {
+// Route::get('/register', function () {
 
-    if (\Auth::check()) {
-        return redirect()->route('dashboard');
-    } else {
-        return view('register');
-    }
-})->name('register');
-Route::post('/register', [UserController::class, 'register'])->name('register_user');
+//     if (\Auth::check()) {
+//         return redirect()->route('dashboard');
+//     } else {
+//         return view('register');
+//     }
+// })->name('register');
+// Route::post('/register', [UserController::class, 'register'])->name('register_user');
 Route::get('/login', function () {
 
     if (\Auth::check()) {
