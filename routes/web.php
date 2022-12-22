@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-
 Route::get('/', fn() => view('welcome'));
 Route::get('/register', function () {
 
@@ -41,3 +40,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/submitCode', [UserController::class, 'submitCode'])->name('submitCode');
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });
+
+Route::get('/preview', fn() => view('preview_output'));
