@@ -32,6 +32,7 @@
                 </li>
                 <li>
                     <img src="./bbd-logo.png"
+                    style="height:70px !important"
                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 15vw, 100.390625px""
                     alt="" class=" nav-logo" />
                 </li>
