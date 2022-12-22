@@ -128,16 +128,17 @@ ${css}
       top: 0;
       position: absolute;
       color: white;
-      background-color: rgba(4, 17, 63, 0.596);
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
     }
 
-    .box .overlap h2 {
+    .box .overlap h2, .box .overlap p{
       /* text-transform: lowercase; */
       font-weight: normal;
+      background-color: rgba(4, 17, 63, 0.603);
+
       color: white;
       font-family: 'Poppins', sans-serif;
     }
