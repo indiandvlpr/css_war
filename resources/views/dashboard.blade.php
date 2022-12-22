@@ -1748,9 +1748,10 @@
 
     <div class="box">
       <h1 style="text-align: center">CSS_WAR</h1>
-      <a target="_blank" style="color:white;transform:translateY(-8px);" href="https://css-tricks.com/the-shapes-of-css/">Blog Link for differnt shape</a>
+      {{-- <a target="_blank" style="color:white;transform:translateY(-8px);" href="https://css-tricks.com/the-shapes-of-css/">Blog Link for differnt shape</a> --}}
       <p>Hi 👋 <span style="font-weight:bold;font-size:25px;" >{{ $user->first_name }} {{ $user->last_name }}</span></p>
-      <a class="btn_primary" style="text-decoration:none" href="/editor">Start Coding</a>
+      {{-- <a class="btn_primary" style="text-decoration:none" href="/editor">Start Coding</a> --}}
+      <h2>Submission is now over.<br> Regards, Roshan Kumar (@dvlprroshan)</h2>
     </div>
 
   </div>

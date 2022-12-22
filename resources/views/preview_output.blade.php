@@ -116,6 +116,18 @@ ${css}
       overflow: hidden;
       cursor: pointer;
       cursor: pointer;
+    }
+
+    .box .overlap {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        color: white;
+        background-color: rgba(11, 17, 37, 0.664);
+        display: flex;
+    }
+    .box .overlap {
 
     }
 
@@ -124,13 +136,11 @@ ${css}
       transition: .5s linear;
     }
 
-    .box iframe{
-        width: 100%;
-        height: 100%;
+    .box iframe {
+      width: 100%;
+      height: 100%;
     }
   </style>
-
-
 </head>
 
 <body>
@@ -144,6 +154,10 @@ ${css}
           $htmlCode = $user->htmlCode;
           $cssCode = $user->cssCode;
         @endphp
+
+        <div class="overlap">
+          <h1>{{ $user->first_name . ' ' . $user->last_name }}</h1>
+        </div>
 
         <script>
           updateOutput('{{ 'frame_' . $user->phone }}', `{!! $htmlCode !!}`, `{!! $cssCode !!}`)
