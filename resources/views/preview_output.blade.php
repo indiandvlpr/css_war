@@ -134,7 +134,8 @@ ${css}
       flex-direction: column;
     }
 
-    .box .overlap h2, .box .overlap p{
+    .box .overlap h2,
+    .box .overlap p {
       /* text-transform: lowercase; */
       font-weight: normal;
       background-color: rgba(4, 17, 63, 0.603);
@@ -154,6 +155,18 @@ ${css}
 </head>
 
 <body>
+
+  <div class="results">
+    <h1 style="color:white">Result of 1st CSS_WAR <span style="font-size:14px">22 Dec 2022</span></h1>
+    <br>
+    <ul style="color:white;text-align:center;list-style:none;font-size:20px">
+      <li>1st - Tanishq Kashla - (BTech/CSE/1st Year) 🎉</li>
+      <li>2nd - Gaurav Rawat - (Btech/IT/3 Year) 🎉</li>
+      <li>3rd - Om Kaushik - (B.Tech/IT/3 Year) 🎉</li>
+    </ul>
+
+    <div style="color:white;text-align:center;margin-top:20px;">Some of the best submissions from our participants.</div>
+  </div>
 
   <div class="container">
     @foreach ($users as $user)
@@ -177,15 +190,12 @@ ${css}
     @endforeach
   </div>
 
-
-
-
-  <div id="close_current" style="color:white;cursor: pointer;background:rgb(248, 88, 88);width:40px;border-radius:5px;text-align:center;position: fixed;font-size:30px;top:5px;right:5px;display:none">X</div>
+  
+  <div id="close_current"
+    style="color:white;cursor: pointer;background:rgb(248, 88, 88);width:40px;border-radius:5px;text-align:center;position: fixed;font-size:30px;top:5px;right:5px;display:none">
+    X</div>
 
   <script>
-
-
-
     function openInModel(elm) {
       elm.style.position = "fixed";
       elm.style.zIndex = "999999";
@@ -205,7 +215,6 @@ ${css}
         elm.style.top = "unset";
         elm.children[1].style.display = "flex";
         document.querySelector("#close_current").style.display = "none";
-
       })
     }
   </script>

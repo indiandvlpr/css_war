@@ -15,15 +15,15 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', fn() => view('welcome'));
-Route::get('/register', function () {
+// Route::get('/register', function () {
 
-    if (\Auth::check()) {
-        return redirect()->route('dashboard');
-    } else {
-        return view('register');
-    }
-})->name('register');
-Route::post('/register', [UserController::class, 'register'])->name('register_user');
+//     if (\Auth::check()) {
+//         return redirect()->route('dashboard');
+//     } else {
+//         return view('register');
+//     }
+// })->name('register');
+// Route::post('/register', [UserController::class, 'register'])->name('register_user');
 Route::get('/login', function () {
 
     if (\Auth::check()) {
@@ -35,9 +35,9 @@ Route::get('/login', function () {
 Route::post('/login', [UserController::class, 'login'])->name('login_user');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/editor', fn() => view('editor'))->name('editor_page');
+    // Route::get('/editor', fn() => view('editor'))->name('editor_page');
     Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
-    Route::post('/submitCode', [UserController::class, 'submitCode'])->name('submitCode');
+    // Route::post('/submitCode', [UserController::class, 'submitCode'])->name('submitCode');
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });
 
